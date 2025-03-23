@@ -1,0 +1,64 @@
+body {
+    font-family: Arial, sans-serif;
+    margin: 0;
+    padding: 0;
+    background-color: #f8f9fa;
+}
+
+.container {
+    display: flex;  
+    flex-direction: row;  /* Ensures navbar and content are side by side */
+    width: 80%;
+    margin: auto;
+    padding: 20px;
+    align-items: flex-start; /* Align items at the top */
+}
+
+
+.navbar {
+    width: 25%; /* Keep fixed width */
+    padding-right: 20px;
+    border-right: 1px solid #ccc; /* Keep right border for separation */
+    display: flex;
+    flex-direction: column; /* Stack items vertically */
+    align-items: flex-start; /* Align content to the left */
+}
+
+.title {
+    font-size: 24px;
+    color: #8a6d3b;
+    margin-bottom: 10px;
+    text-align: left;
+    font-weight: bold;
+}
+
+.navbar ul {
+    list-style-type: none;
+    padding: 0;
+    margin: 0;
+    margin-top: 5px; /* Add space between "Class Works" and list */
+}
+
+.navbar ul li {
+    cursor: pointer;
+    color: #8a6d3b;
+    font-weight: bold;
+    font-size: 18px;
+    margin-bottom: 5px; /* Reduce spacing slightly */
+    display: block;
+}
+
+.navbar ul li:hover {
+    text-decoration: underline;
+}
+
+.content {
+    flex-grow: 1;  /* Takes up remaining space */
+    background: white;
+    padding: 20px;
+    border-radius: 5px;
+    box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1);
+    height: auto;
+    width: 70%; /* Adjust width so it fills the space properly */
+    margin-left: 20px; /* Add space between navbar and content */
+}
