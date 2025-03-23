@@ -1,0 +1,31 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Text Fields</title>
+    <style>
+        #a{
+            display: inline-block;
+        }
+        #i{
+            display: inline-block;
+        }
+    </style>
+    <script>
+        function convertToUppercase() {
+            var aF = document.getElementById("a");
+            var iF = document.getElementById("i");
+            iF.value = aF.value.toUpperCase();
+        }
+    </script>
+
+</head>
+<body>
+    <h3>Enter character and they are automatically converted to caps: </h3>
+    <input type="text" id="a" onkeyup="convertToUppercase()">
+    <input type="text" id="i" disabled><br><br>
+</body>
+</html>
+
+
