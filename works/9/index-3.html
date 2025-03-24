@@ -1,0 +1,109 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Grading Calculator</title>
+    <style>
+        * {
+            box-sizing: border-box;
+            font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+        }
+
+        body {
+            background-color: #e9f0f7;
+            margin: 0;
+            padding: 0;
+            height: 100vh;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+        }
+
+        .container {
+            background-color: #ffffff;
+            padding: 40px 30px;
+            border-radius: 16px;
+            box-shadow: 0 10px 25px rgba(0, 0, 0, 0.1);
+            text-align: center;
+            max-width: 400px;
+            width: 100%;
+        }
+
+        h2 {
+            color: #333;
+            margin-bottom: 20px;
+        }
+
+        input[type="number"] {
+            width: 100%;
+            padding: 14px;
+            font-size: 16px;
+            border: 1px solid #ccc;
+            border-radius: 8px;
+            margin-bottom: 20px;
+            transition: border-color 0.3s;
+        }
+
+        input[type="number"]:focus {
+            border-color: #28a745;
+            outline: none;
+        }
+
+        button {
+            width: 100%;
+            padding: 14px;
+            font-size: 16px;
+            background-color: #28a745;
+            color: #fff;
+            border: none;
+            border-radius: 8px;
+            cursor: pointer;
+            transition: background-color 0.3s ease;
+        }
+
+        button:hover {
+            background-color: #218838;
+        }
+
+        h3#result {
+            margin-top: 25px;
+            font-size: 20px;
+            color: #333;
+        }
+    </style>
+</head>
+<body>
+    <div class="container">
+        <h2>Grading Calculator</h2>
+        <input type="number" id="marks" placeholder="Enter your marks" min="0" max="100">
+        <button onclick="calculateGrade()">Calculate Grade</button>
+        <h3 id="result"></h3>
+    </div>
+
+    <script>
+        function calculateGrade() {
+            const marks = parseFloat(document.getElementById("marks").value);
+            let grade = "";
+
+            if (isNaN(marks) || marks < 0 || marks > 100) {
+                grade = "Please enter a valid mark between 0 and 100.";
+            } else if (marks >= 90) {
+                grade = "A+";
+            } else if (marks >= 80) {
+                grade = "A";
+            } else if (marks >= 70) {
+                grade = "B";
+            } else if (marks >= 60) {
+                grade = "C";
+            } else if (marks >= 50) {
+                grade = "D";
+            } else {
+                grade = "F (Fail)";
+            }
+
+            document.getElementById("result").innerText = "Your Grade: " + grade;
+        }
+    </script>
+</body>
+</html>
