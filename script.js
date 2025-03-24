@@ -12,7 +12,7 @@ document.addEventListener("DOMContentLoaded", function () {
         "task2": { "title": "Task 4 - Username", "url": "works/4/index-1.html" },
         "task3": { "title": "Task 5 - Calculator", "url": "works/5/index.html" },
         "task16":{ "title": "Task 6 - Git hub Integration", "url": "works/6/index.html" },
-        "task17":{ "title": "Task 7 - Git hub Integration", "url": "works/7/index.html" },
+        "task17":{ "title": "Task 7 - Console Output", "url": "works/7/index.html" },
         "task4": { "title": "Task 8 - To Caps", "url": "works/8/index-2.html" },
         "task5": { "title": "Task 9 - Grading Calculator", "url": "works/9/index-3.html" },
         "task6": { "title": "Task 10 - To Do Task", "url": "works/10/index-4.html" },
