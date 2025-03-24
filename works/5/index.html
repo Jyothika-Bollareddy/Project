@@ -1,0 +1,154 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Simple Calculator</title>
+    <style>
+        * {
+            box-sizing: border-box;
+            font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+        }
+
+        body {
+            background: #f0f4f8;
+            margin: 0;
+            padding: 0;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            height: 100vh;
+        }
+
+        #container {
+            background: white;
+            padding: 30px 40px;
+            border-radius: 15px;
+            box-shadow: 0 8px 20px rgba(0, 0, 0, 0.1);
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            width: 400px;
+        }
+
+        input {
+            width: 100%;
+            padding: 12px;
+            margin: 10px 0;
+            font-size: 18px;
+            border: 1px solid #ccc;
+            border-radius: 8px;
+        }
+
+        input:disabled {
+            background-color: #f9f9f9;
+            font-weight: bold;
+        }
+
+        .button_div {
+            display: flex;
+            flex-wrap: wrap;
+            gap: 10px;
+            justify-content: center;
+            margin-top: 20px;
+        }
+
+        button {
+            padding: 10px 15px;
+            font-size: 16px;
+            width: 180px;
+            border: none;
+            border-radius: 8px;
+            background-color: #4a90e2;
+            color: white;
+            cursor: pointer;
+            transition: background-color 0.3s ease;
+        }
+
+        button:hover {
+            background-color: #357ABD;
+        }
+
+        .input_div {
+            width: 100%;
+        }
+
+        select {
+            width: 100%;
+            padding: 12px;
+            margin: 10px 0;
+            font-size: 18px;
+            border: 1px solid #ccc;
+            border-radius: 8px;
+        }
+    </style>
+</head>
+<body>
+    <div id="container">
+        <div class="input_div">
+            <input type="text" placeholder="Enter the value of X" id="num1" />
+            <input type="text" placeholder="Enter the value of Y" id="num2" />
+            <input type="text" placeholder="Result will appear here" id="res" disabled />
+            <select id="operation">
+                <option value="add">Addition (X + Y)</option>
+                <option value="subtract">Subtraction (X - Y)</option>
+                <option value="multiply">Multiplication (X * Y)</option>
+                <option value="divide">Division (X / Y)</option>
+            </select>
+        </div>
+
+        <div class="button_div">
+            <button onclick="performOperation()">Perform Operation</button>
+        </div>
+    </div>
+
+    <script>
+        function performOperation() {
+            var operation = document.getElementById("operation").value;
+            switch (operation) {
+                case "add":
+                    add();
+                    break;
+                case "subtract":
+                    subtract();
+                    break;
+                case "multiply":
+                    multiply();
+                    break;
+                case "divide":
+                    divide();
+                    break;
+                default:
+                    document.getElementById("res").value = "Invalid operation";
+            }
+        }
+
+        function add() {
+            var num1 = parseFloat(document.getElementById("num1").value);
+            var num2 = parseFloat(document.getElementById("num2").value);
+            document.getElementById("res").value = !isNaN(num1) && !isNaN(num2) ? (num1 + num2) : "Invalid input";
+        }
+
+        function subtract() {
+            var num1 = parseFloat(document.getElementById("num1").value);
+            var num2 = parseFloat(document.getElementById("num2").value);
+            document.getElementById("res").value = !isNaN(num1) && !isNaN(num2) ? (num1 - num2) : "Invalid input";
+        }
+
+        function multiply() {
+            var num1 = parseFloat(document.getElementById("num1").value);
+            var num2 = parseFloat(document.getElementById("num2").value);
+            document.getElementById("res").value = !isNaN(num1) && !isNaN(num2) ? (num1 * num2) : "Invalid input";
+        }
+
+        function divide() {
+            var num1 = parseFloat(document.getElementById("num1").value);
+            var num2 = parseFloat(document.getElementById("num2").value);
+            if (!isNaN(num1) && !isNaN(num2)) {
+                document.getElementById("res").value = num2 !== 0 ? (num1 / num2) : "Cannot divide by 0";
+            } else {
+                document.getElementById("res").value = "Invalid input";
+            }
+        }
+    </script>
+</body>
+</html>
